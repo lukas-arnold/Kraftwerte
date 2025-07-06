@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kraftwerte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/static/manifest.json">
+</head>
+<body>
+    <div class="container">
+        <h1>🏋️ Kraftwerte</h1>
+
+        <div id="message"></div>
+
+        <h2><span id="formTitle">Neuen Kraftwert hinzufügen</span></h2>
+        <form id="kraftwertForm">
+            <div>
+                <label for="muskelgruppe">Muskelgruppe:</label>
+                <input type="text" id="muskelgruppe" name="muskelgruppe" required>
+            </div>
+            <div>
+                <label for="uebung">Übung:</label>
+                <input type="text" id="uebung" name="uebung" required>
+            </div>
+            <div>
+                <label for="gewicht">Gewicht (kg):</label>
+                <input type="number" id="gewicht" name="gewicht" step="0.1" required>
+            </div>
+            <button type="submit" id="submitButton">Hinzufügen</button>
+            <button type="button" id="cancelEditButton" class="cancel-btn" style="display:none;">Abbrechen</button>
+        </form>
+
+        <h2>Gespeicherte Kraftwerte</h2>
+        <table id="kraftwerteTable">
+            <thead>
+                <tr>
+                    <th>Muskelgruppe</th>
+                    <th>Übung</th>
+                    <th>Gewicht (kg)</th>
+                    <th>Zuletzt geändert</th>
+                    <th>Aktionen</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script src="/static/script.js" defer></script>
+</body>
+</html>

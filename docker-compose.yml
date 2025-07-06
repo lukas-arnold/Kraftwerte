@@ -1,0 +1,9 @@
+services:
+  app:
+    container_name: kraftwerte
+    image: ghcr.io/lukas-arnold/kraftwerte:latest
+    ports:
+      - "8100:8000"
+    restart: on-failure
+    volumes:
+      - .:.

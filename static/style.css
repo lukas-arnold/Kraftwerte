@@ -1,0 +1,266 @@
+/* Grundlegende Stile */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Responsivität für kleinere Bildschirme */
+    padding: 15px; /* Etwas weniger Padding auf kleinen Geräten */
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #4CAF50;
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+/* Form-Stile */
+#kraftwertForm div {
+    margin-bottom: 15px;
+}
+
+#kraftwertForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#kraftwertForm input[type="text"],
+#kraftwertForm input[type="number"] {
+    width: 100%; /* Wichtig: Inputs füllen die gesamte Breite aus */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Stellt sicher, dass Padding die Breite nicht sprengt */
+}
+
+#kraftwertForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-right: 10px; /* Abstand zwischen Buttons */
+    transition: background-color 0.3s ease;
+}
+
+#kraftwertForm button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#kraftwertForm button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#kraftwertForm .cancel-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+#kraftwertForm .cancel-btn:hover {
+    background-color: #da190b;
+}
+
+/* Tabellen-Stile */
+#kraftwerteTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#kraftwerteTable th,
+#kraftwerteTable td {
+    border: 1px solid #eee;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+#kraftwerteTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #555;
+}
+
+#kraftwerteTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#kraftwerteTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.actions button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.actions .edit-btn {
+    background-color: #2196F3;
+    color: white;
+}
+
+.actions .edit-btn:hover {
+    background-color: #0b7dda;
+}
+
+.actions button:last-child {
+    background-color: #f44336;
+    color: white;
+}
+
+.actions button:last-child:hover {
+    background-color: #da190b;
+}
+
+/* Nachrichtenbereich */
+.message {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: none; /* Standardmäßig ausgeblendet */
+    font-weight: bold;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive Anpassungen mit Media Queries */
+
+/* Für Bildschirme mit einer Breite von maximal 768px (typisch für Tablets im Hochformat und Handys) */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px; /* Kleinerer Außenabstand */
+        padding: 10px; /* Kleinerer Innenabstand */
+    }
+
+    h1 {
+        font-size: 2em; /* Kleinere Überschrift */
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    #kraftwertForm button {
+        width: calc(50% - 5px); /* Buttons nehmen fast die halbe Breite ein */
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #kraftwertForm button:first-of-type {
+        margin-right: 10px; /* Abstand zwischen den Buttons */
+    }
+
+    /* Tabelle responsiv machen */
+    #kraftwerteTable,
+    #kraftwerteTable thead,
+    #kraftwerteTable tbody,
+    #kraftwerteTable th,
+    #kraftwerteTable td,
+    #kraftwerteTable tr {
+        display: block; /* Elemente als Blöcke anzeigen */
+    }
+
+    #kraftwerteTable thead tr {
+        position: absolute;
+        top: -9999px; /* Tabellenkopf verstecken */
+        left: -9999px;
+    }
+
+    #kraftwerteTable tr {
+        border: 1px solid #eee;
+        margin-bottom: 10px;
+        border-radius: 8px; /* Für bessere Optik */
+        overflow: hidden; /* Sicherstellen, dass border-radius sichtbar ist */
+    }
+
+    #kraftwerteTable td {
+        border: none; /* Keine individuellen Zellen-Borders */
+        position: relative;
+        padding-left: 50%; /* Platz für Label schaffen */
+        text-align: right; /* Inhalt rechtsbündig ausrichten */
+    }
+
+    #kraftwerteTable td:before {
+        content: attr(data-label); /* Label aus data-label Attribut anzeigen */
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+    /* Labels für die Zellen */
+    #kraftwerteTable tr td:nth-of-type(1):before { content: "Muskelgruppe:"; }
+    #kraftwerteTable tr td:nth-of-type(2):before { content: "Übung:"; }
+    #kraftwerteTable tr td:nth-of-type(3):before { content: "Gewicht (kg):"; }
+    #kraftwerteTable tr td:nth-of-type(4):before { content: "Zuletzt geändert:"; }
+    #kraftwerteTable tr td:nth-of-type(5):before { content: "Aktionen:"; }
+
+    .actions {
+        text-align: right; /* Aktionen-Buttons rechtsbündig */
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+
+    .actions button {
+        width: auto; /* Buttons passen sich dem Inhalt an */
+        margin-bottom: 0; /* Kein zusätzlicher Margin */
+    }
+}
+
+/* Für sehr kleine Bildschirme (z.B. iPhone SE) */
+@media (max-width: 480px) {
+    #kraftwertForm button {
+        width: 100%; /* Buttons nehmen volle Breite ein */
+        margin-right: 0;
+        margin-bottom: 10px; /* Vertikaler Abstand */
+    }
+    #kraftwertForm button:first-of-type {
+        margin-right: 0; /* Keinen rechten Margin für den ersten Button */
+    }
+}
+
