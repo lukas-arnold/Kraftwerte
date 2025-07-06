@@ -1,10 +1,10 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from datetime import datetime
 
 class KraftwertBase(BaseModel):
-    muskelgruppe: str = Field(..., example="Brust")
-    uebung: str = Field(..., example="Bankdrücken")
-    gewicht: float = Field(..., example=80.5)
+    muskelgruppe: str
+    uebung: str
+    gewicht: float
 
 class KraftwertCreate(KraftwertBase):
     pass
@@ -16,5 +16,5 @@ class Kraftwert(KraftwertBase):
     id: int
     updated_at: datetime
 
-    class Config:
+    class ConfigDict:
         from_attributes = True
